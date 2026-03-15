@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://v571f3fmlbl4"]
+
+[ext_resource type="PackedScene" uid="uid://csp0jofmsi4o" path="res://scenes/hero.tscn" id="1_wm3tr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4xhx"]
+size = Vector2(16, 16)
+
+[node name="easy_difficult" type="Node2D" unique_id=349146604]
+
+[node name="Hero" parent="." unique_id=570765270 instance=ExtResource("1_wm3tr")]
+position = Vector2(136, 320)
+floor_block_on_wall = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=728963183]
+position = Vector2(0, 480)
+scale = Vector2(45, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1815439276]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_m4xhx")
