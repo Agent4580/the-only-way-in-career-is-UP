@@ -9,7 +9,6 @@ size = Vector2(16, 16)
 
 [node name="Hero" parent="." unique_id=570765270 instance=ExtResource("1_wm3tr")]
 position = Vector2(136, 320)
-floor_block_on_wall = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=728963183]
 position = Vector2(0, 480)

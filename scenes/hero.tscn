@@ -1,19 +1,27 @@
 [gd_scene format=3 uid="uid://csp0jofmsi4o"]
 
 [ext_resource type="Texture2D" uid="uid://fgfrvoogdsn5" path="res://sprites/icon.svg" id="1_3uyx6"]
-[ext_resource type="Script" uid="uid://dufmrw0ljp6vk" path="res://scripts/hero_demo.gd" id="1_06baw"]
+[ext_resource type="Script" uid="uid://crcnxnky5r2gm" path="res://scripts/hero.gd" id="1_06baw"]
 [ext_resource type="Script" uid="uid://o346h7lc3evv" path="res://scripts/gravity.gd" id="2_mv13s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06baw"]
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvbpl"]
 size = Vector2(32, 32)
 
 [node name="Hero" type="CharacterBody2D" unique_id=570765270]
+floor_block_on_wall = false
 script = ExtResource("1_06baw")
 
 [node name="Gravity" type="Area2D" parent="." unique_id=478256987]
 gravity_space_override = 3
 gravity_point_unit_distance = 0.334
 script = ExtResource("2_mv13s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity" unique_id=1541529416]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_06baw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=480381357]
 scale = Vector2(0.25, 0.25)
