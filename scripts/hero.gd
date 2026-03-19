@@ -11,7 +11,10 @@ func _physics_process(delta: float) -> void:
 	#Начинает работать, когда игрок не на полу
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+		
+	if is_on_floor():
+		$AnimatedSprite2D.play('idle')
+		
 	#Определяем направление движения
 	var direction_h = Input.get_axis('move_left', 'move_right')
 	
@@ -19,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	#иначе останавливаемся
 	if direction_h:
 		velocity.x = speed * direction_h
+		$AnimatedSprite2D.play("run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	
@@ -30,8 +34,12 @@ func _physics_process(delta: float) -> void:
 	if  is_on_wall()  and not is_on_floor():
 		$Gravity.set_gravity(0)
 		velocity.y = 0
+		$AnimatedSprite2D.play('climb')
 		if direction_v:
+			$AnimatedSprite2D.play()
 			velocity.y = speed * direction_v
+		else:
+			$AnimatedSprite2D.pause()
 	else:
 		$Gravity.set_gravity(980)
 	#Обязательная строка для данной игры
