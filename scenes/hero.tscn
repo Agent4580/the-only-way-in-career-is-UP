@@ -221,8 +221,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvbpl"]
-size = Vector2(32, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06baw"]
+height = 32.0
 
 [node name="Hero" type="CharacterBody2D" unique_id=570765270]
 floor_block_on_wall = false
@@ -239,11 +239,10 @@ shape = SubResource("RectangleShape2D_06baw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1830164032]
 sprite_frames = SubResource("SpriteFrames_48qaf")
-animation = &"climb"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.67150515
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1202082536]
 position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_yvbpl")
+shape = SubResource("CapsuleShape2D_06baw")

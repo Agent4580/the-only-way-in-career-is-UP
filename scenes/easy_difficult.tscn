@@ -9,10 +9,19 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynrm1"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym1nb"]
+size = Vector2(32, 160)
+
 [node name="easy_difficult" type="Node2D" unique_id=349146604]
 
+[node name="Hero_camera" type="Camera2D" parent="." unique_id=140609437]
+limit_left = 0
+limit_top = 0
+limit_right = 10000007
+limit_bottom = 485
+
 [node name="Hero" parent="." unique_id=570765270 instance=ExtResource("1_wm3tr")]
-position = Vector2(8, 448)
+position = Vector2(32, 448)
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=728963183]
 position = Vector2(0, 480)
@@ -82,3 +91,41 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block3" unique_id=1082600812]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_ynrm1")
+
+[node name="block4" type="StaticBody2D" parent="." unique_id=1010408974]
+position = Vector2(496, 0)
+scale = Vector2(1.5149521, 9.751992)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="block4" unique_id=1598092646]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_m4xhx")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block4" unique_id=2042765602]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_ynrm1")
+
+[node name="block5" type="StaticBody2D" parent="." unique_id=1903496232]
+position = Vector2(600, 176)
+scale = Vector2(5.8092036, 10.188093)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="block5" unique_id=394211688]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_m4xhx")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block5" unique_id=1923304314]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_ynrm1")
+
+[node name="camoveright" type="Area2D" parent="." unique_id=1424098963]
+position = Vector2(648, 16)
+monitorable = false
+priority = 1
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camoveright" unique_id=205601275]
+position = Vector2(16, 80)
+shape = SubResource("RectangleShape2D_ym1nb")
